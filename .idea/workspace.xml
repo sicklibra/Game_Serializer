@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="second commit all files funcitoning as expected.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="functions using interface for objects. updated compareto.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +83,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -106,8 +114,19 @@
       <updated>1715274639263</updated>
       <workItem from="1715274640950" duration="1961000" />
       <workItem from="1715302442109" duration="2097000" />
-      <workItem from="1715387317665" duration="7741000" />
+      <workItem from="1715387317665" duration="9022000" />
+      <workItem from="1715610569442" duration="1044000" />
+      <workItem from="1715624987364" duration="3944000" />
     </task>
+    <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
+      <option name="closed" value="true" />
+      <created>1715399881531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715399881531</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit all files funcitoning as expected." />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit all files funcitoning as expected." />
+    <MESSAGE value="functions using interface for objects. updated compareto." />
+    <option name="LAST_COMMIT_MESSAGE" value="functions using interface for objects. updated compareto." />
   </component>
 </project>

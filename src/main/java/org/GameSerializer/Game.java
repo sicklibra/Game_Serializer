@@ -1,4 +1,4 @@
-package org.example;
+package org.GameSerializer;
 
 import java.util.Objects;
 import java.nio.charset.StandardCharsets;
@@ -7,8 +7,6 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Scanner;
-import java.util.List;
 
 public class Game implements VideoGame, Comparable, Serializable {
     String title;
@@ -67,7 +65,43 @@ public class Game implements VideoGame, Comparable, Serializable {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        int asciiIn;
+        int asciiOut;
+        //If all is the same return 0 for match.
+        if (title.equalsIgnoreCase(((Game)o).getTitle()) && numPlayers==((Game) o).getPlayers()){
+
+            return 0;
+        }
+        else {
+            if (title.equalsIgnoreCase(((Game) o).getTitle())) {//Compares number of players if title is same
+                if (numPlayers > ((Game) o).getPlayers()) {
+                    System.out.println("Same title, greater number of players.");
+                    return 1;
+                } else {
+                    System.out.println("Same title, smaller number of players.");
+                    return -1;
+                }
+            }
+            else {//This covers if the number of players is the same
+                for (int i = 0; i < title.length(); i++) {
+                    asciiIn = title.toUpperCase().charAt(i);
+                    asciiOut = ((Game) o).getTitle().toUpperCase().charAt(i);
+                    if (asciiIn > asciiOut) {
+                        System.out.println("Falls before alphabetically");
+                        return 1;
+                    }
+                    else if (asciiIn < asciiOut) {
+                        System.out.println("Falls after alphabetically");
+                        return -1;
+                    }
+                    else{
+                        continue;
+                    }
+                }
+                return 0;
+            }
+        }
+
     }
 
     @Override
@@ -93,20 +127,20 @@ public class Game implements VideoGame, Comparable, Serializable {
         }
     }
     public static Game deserializeFromCSV(String file){
-        Game gameFromFile = new Game();
+        VideoGame gameFromFile = new Game();
         try {
             String str = Files.readString(Paths.get(file), StandardCharsets.UTF_8);
 
             String[] line = str.split(",");
-            gameFromFile.setTitle(line[0]);
-            gameFromFile.setSystem(line[1]);
-            gameFromFile.setNumPlayers(Integer.parseInt(line[2]));
-            gameFromFile.setFormat(line[3]);
+            ((Game) gameFromFile).setTitle(line[0]);
+            ((Game) gameFromFile).setSystem(line[1]);
+            ((Game)gameFromFile).setNumPlayers(Integer.parseInt(line[2]));
+            ((Game)gameFromFile).setFormat(line[3]);
 
         }
         catch(IOException e){
             System.out.println("Please check the file name.");
         }
-        return gameFromFile;
+        return (Game)gameFromFile;
     }
 }

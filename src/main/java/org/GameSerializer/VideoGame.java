@@ -1,4 +1,4 @@
-package org.example;
+package org.GameSerializer;
 
 public interface VideoGame {
     public String getTitle();
