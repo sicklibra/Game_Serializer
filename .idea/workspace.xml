@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="functions using interface for objects. updated compareto.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" afterDir="false" />
-    </list>
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="created Game sets began working with tests." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +123,7 @@
       <workItem from="1715624987364" duration="3944000" />
       <workItem from="1716055718358" duration="6951000" />
       <workItem from="1716167306217" duration="668000" />
-      <workItem from="1716312321822" duration="2157000" />
+      <workItem from="1716312321822" duration="2265000" />
     </task>
     <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
       <option name="closed" value="true" />
@@ -138,7 +133,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715399881531</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created Game sets began working with tests.">
+      <option name="closed" value="true" />
+      <created>1716338654722</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716338654722</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created Game sets began working with tests.">
+      <option name="closed" value="true" />
+      <created>1716338686060</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716338686060</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit all files funcitoning as expected." />
     <MESSAGE value="functions using interface for objects. updated compareto." />
-    <option name="LAST_COMMIT_MESSAGE" value="functions using interface for objects. updated compareto." />
+    <MESSAGE value="created Game sets began working with tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="created Game sets began working with tests." />
   </component>
 </project>
