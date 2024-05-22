@@ -1,6 +1,11 @@
 package org.GameSerializer;
 
+import java.io.File;
+import java.lang.reflect.Array;
+import java.nio.file.StandardOpenOption;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,7 +13,7 @@ import java.nio.file.Path;
 import java.io.IOException;
 import java.io.Serializable;
 
-public class Game implements VideoGame, Comparable, Serializable {
+public class Game implements VideoGame, Comparable<Game>, Serializable {
     String title;
     String system;
     int numPlayers;
@@ -30,15 +35,9 @@ public class Game implements VideoGame, Comparable, Serializable {
         this.format = format;
     }
     //Mutators
-    public void setTitle(String title){
-        this.title = title;
-    }
-    public void setSystem(String system){
-        this.system = system;
-    }
-    public void setNumPlayers(int numPlayers){
-        this.numPlayers = numPlayers;
-    }
+    public void setTitle(String title){this.title = title;}
+    public void setSystem(String system){this.system = system;}
+    public void setNumPlayers(int numPlayers){this.numPlayers = numPlayers;}
     public void setFormat(String format){this.format = format;}
 
     //String to write to csv
@@ -53,19 +52,19 @@ public class Game implements VideoGame, Comparable, Serializable {
     public int getPlayers(){
         return numPlayers;
     }
-
     @Override
     public String getTitle(){
         return title;
     }
-
     public String getSystem(){
         return system;
     }
 
+    //compareTo returns a neg/pos num or 0 (alphabetically compare titles)
     @Override
-    public int compareTo(Object o) {
-        int asciiIn;
+    public int compareTo(Game o) {
+       return title.compareToIgnoreCase(o.getTitle());
+        /*int asciiIn;
         int asciiOut;
         //If all is the same return 0 for match.
         if (title.equalsIgnoreCase(((Game)o).getTitle()) && numPlayers==((Game) o).getPlayers()){
@@ -100,8 +99,7 @@ public class Game implements VideoGame, Comparable, Serializable {
                 }
                 return 0;
             }
-        }
-
+        }*/
     }
 
     @Override
@@ -109,7 +107,7 @@ public class Game implements VideoGame, Comparable, Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return numPlayers == game.numPlayers && Objects.equals(title, game.title);
+        return (numPlayers == game.numPlayers) && (((Game) o).getTitle().equals(title));
     }
 
     @Override
@@ -119,28 +117,65 @@ public class Game implements VideoGame, Comparable, Serializable {
     public static void serializeToCSV(Game game,String file){
         Path filePath = Paths.get(file);
         try{
-            Files.writeString(filePath, game.csvStr());
+            String Checkstring = Files.readString(filePath, StandardCharsets.UTF_8);
+        String[] lines = Checkstring.split("\n");
+        for (String line : lines) {
+            String[] split = line.split(",");
+            if(split[0].trim().equals(game.title)) {
+                return;
+                }
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        try{
+            Files.writeString(filePath,game.csvStr(), StandardOpenOption.APPEND);
         }
         catch (IOException e){
             System.out.println("Something went wrong.");
             System.out.println(e.getMessage());
         }
     }
-    public static Game deserializeFromCSV(String file){
-        VideoGame gameFromFile = new Game();
+    public static Game deserializeFromCSV(String file) {
+
+        VideoGame gameFromFile = null;
         try {
             String str = Files.readString(Paths.get(file), StandardCharsets.UTF_8);
 
             String[] line = str.split(",");
-            ((Game) gameFromFile).setTitle(line[0]);
+            gameFromFile = new Game(line[0].trim(), line[1].trim(), Integer.parseInt(line[2]), line[3].trim());
+            /*((Game) gameFromFile).setTitle(line[0]);
             ((Game) gameFromFile).setSystem(line[1]);
             ((Game)gameFromFile).setNumPlayers(Integer.parseInt(line[2]));
-            ((Game)gameFromFile).setFormat(line[3]);
+            ((Game)gameFromFile).setFormat(line[3]);*/
 
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Please check the file name.");
         }
-        return (Game)gameFromFile;
+        return (Game) gameFromFile;
+    }
+
+    public static Set<Game> deserializeSetFromCSV(String file) {
+        Set<Game> games = new TreeSet<>();
+        try{
+            String allLines= Files.readString(Paths.get(file), StandardCharsets.UTF_8);
+        String[] lines = allLines.split("\n");
+        for(String x : lines){
+            String[] item= x.split(",");
+            VideoGame thisgame= new Game(item[0].trim(),item[1].trim(),Integer.parseInt(item[2]),item[3].trim());
+            games.add((Game)thisgame);
+        }
+    }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+        return games;
+    }
+    public static void serializeSetToCSV(Set<Game> games, String file) {
+        for(Game game : games){
+            serializeToCSV(game,file);
+        }
+
     }
 }
