@@ -25,9 +25,13 @@ public class Driver {
         Set<Game> gameSetIn = deserializeSetFromCSV(file);
         int i =0;
         for (Game x :gameSetIn){
-            System.out.println(x.compareTo((Game)gameSetIn.toArray()[i]));//*****Fix me!****
+            System.out.println(x.compareTo((Game)gameSet.toArray()[i]));
             i++;
         }
+//        for (Game x :gameSetIn){
+//            System.out.println(x.toString());
+//        }
+        System.out.println("done");
         //serializeToCSV((Game)outGame, file);
         /*Game ingame= deserializeFromCSV(file);
         System.out.println(((Game) outGame).compareTo(ingame));
