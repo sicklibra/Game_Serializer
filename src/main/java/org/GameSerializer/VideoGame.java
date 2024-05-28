@@ -7,4 +7,5 @@ public interface VideoGame {
     public int getPlayers();
     public String getSystem();
     public String csvStr();
+    public int compareTo(Game o);
 }

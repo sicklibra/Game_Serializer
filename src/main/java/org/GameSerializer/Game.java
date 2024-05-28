@@ -117,27 +117,14 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
     public static void serializeToCSV(Game game,String file){
         Path filePath = Paths.get(file);
         try{
-            String Checkstring = Files.readString(filePath, StandardCharsets.UTF_8);
-        String[] lines = Checkstring.split("\n");
-        for (String line : lines) {
-            String[] split = line.split(",");
-            if(split[0].trim().equals(game.title)) {
-                return;
-                }
-            }
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-        try{
-            Files.writeString(filePath,game.csvStr(), StandardOpenOption.APPEND);
+            Files.writeString(filePath,game.csvStr(), StandardCharsets.UTF_8);
         }
         catch (IOException e){
             System.out.println("Something went wrong.");
             System.out.println(e.getMessage());
         }
     }
-    public static Game deserializeFromCSV(String file) {
+    public static VideoGame deserializeFromCSV(String file) {
 
         VideoGame gameFromFile = null;
         try {
@@ -156,15 +143,20 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
         return (Game) gameFromFile;
     }
 
-    public static Set<Game> deserializeSetFromCSV(String file) {
-        Set<Game> games = new TreeSet<>();
+    public static Set<VideoGame> deserializeSetFromCSV(String file) {
+        Set<VideoGame> games = new TreeSet<>();
         try{
             String allLines= Files.readString(Paths.get(file), StandardCharsets.UTF_8);
         String[] lines = allLines.split("\n");
-        for(String x : lines){
-            String[] item= x.split(",");
-            VideoGame thisgame= new Game(item[0].trim(),item[1].trim(),Integer.parseInt(item[2]),item[3].trim());
-            games.add((Game)thisgame);
+        for(String obj : lines){
+            String[] item= obj.split(",");
+            if (item[0].equalsIgnoreCase("Title")){
+                continue;
+            }
+            else {
+                VideoGame thisgame = new Game(item[0].trim(), item[1].trim(), Integer.parseInt(item[2]), item[3].trim());
+                games.add(thisgame);
+            }
         }
     }
         catch (IOException e){
@@ -172,9 +164,18 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
         }
         return games;
     }
-    public static void serializeSetToCSV(Set<Game> games, String file) {
-        for(Game game : games){
-            serializeToCSV(game,file);
+    public static void serializeSetToCSV(Set<VideoGame> games, String file) {
+        Path filePath = Paths.get(file);
+
+        try{
+            Files.writeString(filePath, "Title,System,Players,Format\n");
+            for(VideoGame game : games){
+                Files.writeString(filePath,game.csvStr(), StandardOpenOption.APPEND);
+            }
+        }
+        catch (IOException e){
+            System.out.println("Something went wrong.");
+            System.out.println(e.getMessage());
         }
 
     }

@@ -9,28 +9,25 @@ public class Driver {
     public static void main(String[] args) {
         String file= "gamelog.csv";
         //Create tree set for games to serialize and deserialize to csv.
-        Set<Game> gameSet= new TreeSet<>();
+        Set<VideoGame> gameSet= new TreeSet<>();
         //Create games.
         VideoGame  outGame= new Game("Legend of Zelda", "Nintendo",1, "Cartridge");
-        gameSet.add((Game)outGame);
+        gameSet.add(outGame);
         outGame=new Game("Apex", "Sega",1, "Cartridge");
-        gameSet.add((Game)outGame);
+        gameSet.add(outGame);
         outGame=new Game("Banjo", "Play Station",2, "Disk");
-        gameSet.add((Game)outGame);
+        gameSet.add(outGame);
         outGame= new Game("Legend of Zelda", "Nintendo", 1, "Cartridge");
-        gameSet.add((Game)outGame);
+        gameSet.add(outGame);
 
-        serializeSetToCSV(gameSet, file);
+        serializeSetToCSV(gameSet,"gameset.csv");
         System.out.println(gameSet.toString());
-        Set<Game> gameSetIn = deserializeSetFromCSV(file);
+        Set<VideoGame> gameSetIn = deserializeSetFromCSV("gameset.csv");
         int i =0;
-        for (Game x :gameSetIn){
-            System.out.println(x.compareTo((Game)gameSet.toArray()[i]));
+        for (VideoGame obj :gameSetIn){
+            System.out.println(obj.compareTo((Game)gameSet.toArray()[i]));
             i++;
         }
-//        for (Game x :gameSetIn){
-//            System.out.println(x.toString());
-//        }
         System.out.println("done");
         //serializeToCSV((Game)outGame, file);
         /*Game ingame= deserializeFromCSV(file);
