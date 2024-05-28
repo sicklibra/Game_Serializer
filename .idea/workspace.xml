@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="change compareto in driver to compare proper Objects">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" afterDir="false" />
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="sets now of videogame de/serialize to/from csv successful +header">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +128,7 @@
       <workItem from="1716312321822" duration="2299000" />
       <workItem from="1716380502215" duration="1405000" />
       <workItem from="1716473887685" duration="1441000" />
-      <workItem from="1716855296113" duration="2978000" />
+      <workItem from="1716855296113" duration="3113000" />
     </task>
     <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
       <option name="closed" value="true" />
@@ -173,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716381713739</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sets now of videogame de/serialize to/from csv successful +header">
+      <option name="closed" value="true" />
+      <created>1716859141236</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716859141236</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +190,8 @@
     <MESSAGE value="created Game sets began working with tests." />
     <MESSAGE value="workspace update" />
     <MESSAGE value="change compareto in driver to compare proper Objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="change compareto in driver to compare proper Objects" />
+    <MESSAGE value="sets now of videogame de/serialize to/from csv successful +header" />
+    <option name="LAST_COMMIT_MESSAGE" value="sets now of videogame de/serialize to/from csv successful +header" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
