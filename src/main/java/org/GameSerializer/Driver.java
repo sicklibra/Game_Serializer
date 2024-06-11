@@ -63,7 +63,7 @@ public class Driver {
         for (VideoGame obj :gameSetIn){
             System.out.println(obj.csvStr());
         }
-        serializeToBin("games.bin",gsbin);
+        serializeToBin("games.bin",gameSet);
         System.out.println("done");
         //serializeToCSV((Game)outGame, file);
         /*Game ingame= deserializeFromCSV(file);
