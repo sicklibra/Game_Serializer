@@ -1,17 +1,15 @@
 package org.GameSerializer;
 
-import java.io.File;
-import java.lang.reflect.Array;
-import java.nio.file.StandardOpenOption;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.*;
+import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.Path;
-import java.io.IOException;
-import java.io.Serializable;
+
 
 public class Game implements VideoGame, Comparable<Game>, Serializable {
     String title;
@@ -178,5 +176,34 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    public static void serializeSetToXML(Set<VideoGame> games, String file){
+        try{
+            Path filePath = Paths.get(file);
+            XMLEncoder enc;
+            enc = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(file)));
+            enc.writeObject(games);
+            enc.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public static Set<VideoGame> deserializeFromXML(String file){
+        /*Fix me!!
+        * For some reason when it deserializes from xml the number of players and the format are not retained.
+        * I verified in serializeToXml that the correct values were being passed Find out why they are not retained! */
+        Set<VideoGame> games = new TreeSet<>();
+        try{
+            XMLDecoder dec =new XMLDecoder(new FileInputStream(file));
+            games = (Set<VideoGame>) dec.readObject();
+            dec.close();
+
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        return games;
     }
 }
