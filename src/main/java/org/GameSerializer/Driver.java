@@ -13,28 +13,27 @@ import java.util.Set;
 import static org.GameSerializer.Game.*;
 
 public class Driver {
-    public static byte[] convertObjectToBytes(Set<Object> objects) {
-        ByteArrayOutputStream boas = new ByteArrayOutputStream();
-        try (ObjectOutputStream ois = new ObjectOutputStream(boas)) {
-            ois.writeObject(objects);
-            return boas.toByteArray();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-        throw new RuntimeException();
-    }
-    public static void serializeToBin(String file, Set<Object> outSet){
-        byte[] outByte= convertObjectToBytes(outSet);
+
+    public static void serializeToBin(String file, byte[] bytes){
         try{
-            Files.write(Paths.get(file),outByte);
-    }
+            Path fileOut= Paths.get(file);
+            Files.write(fileOut, bytes);
+        }
         catch(Exception e){
-        System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
-    public static Set<Objects> deserializeObjSetFromBin(String file){
-        Set<Objects> outset = new TreeSet();
-        return outset;
+    public static byte[] deserializeObjSetFromBin(String file){
+        byte[] outByte=new byte[0];
+        try {
+            Path inFile= Paths.get(file);
+            outByte=Files.readAllBytes(inFile);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return outByte;
     }
     public static void main(String[] args) {
         String file= "gamelog.csv";
@@ -63,7 +62,12 @@ public class Driver {
         for (VideoGame obj :gameSetIn){
             System.out.println(obj.csvStr());
         }
-        serializeToBin("games.bin",gameSet);
+        //need to covert set to byte array.
+        byte[] bytearr = toBytes(gameSet);
+        serializeToBin("games.bin", bytearr);
+
+        byte[] inBytes=deserializeObjSetFromBin("games.bin");
+        gameSetIn= convertFromByte(inBytes);
         System.out.println("done");
         //serializeToCSV((Game)outGame, file);
         /*Game ingame= deserializeFromCSV(file);

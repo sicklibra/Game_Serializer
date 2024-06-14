@@ -180,7 +180,7 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
 
     public static void serializeSetToXML(Set<VideoGame> games, String file){
         try{
-            Path filePath = Paths.get(file);
+            //Path filePath = Paths.get(file);
             XMLEncoder enc;
             enc = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(file)));
             enc.writeObject(games);
@@ -202,6 +202,27 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
 
         }
         catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        return games;
+    }
+    public static byte[] toBytes(Set<VideoGame> games){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        try (ObjectOutputStream oos = new ObjectOutputStream(baos)){
+            oos.writeObject(games);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return baos.toByteArray();
+    }
+    public static Set<VideoGame> convertFromByte(byte[] bytes){
+        Set<VideoGame> games = new TreeSet<>();
+        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        try (ObjectInputStream ois = new ObjectInputStream(bais)) {
+            games= (Set<VideoGame>) ois.readObject();
+        }
+        catch (Exception e){
             System.out.println(e.getMessage());
         }
         return games;

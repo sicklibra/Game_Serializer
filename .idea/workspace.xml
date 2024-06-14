@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="Add xml serialization begin byte serialization methods">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="change item and ignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Game_Serializer [:Driver.main()].executor": "Run",
+    "Gradle.Game_Serializer [:Driver.main()].executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -132,7 +133,8 @@
       <workItem from="1716855296113" duration="3148000" />
       <workItem from="1716859215684" duration="49000" />
       <workItem from="1717692092589" duration="3926000" />
-      <workItem from="1718128202686" duration="4541000" />
+      <workItem from="1718128202686" duration="4571000" />
+      <workItem from="1718375397584" duration="5808000" />
     </task>
     <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
       <option name="closed" value="true" />
@@ -198,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718132712122</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change item and ignore">
+      <option name="closed" value="true" />
+      <created>1718132800954</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718132800954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,16 +223,12 @@
     <MESSAGE value="sets now of videogame de/serialize to/from csv successful +header" />
     <MESSAGE value="+csv to gitignore" />
     <MESSAGE value="Add xml serialization begin byte serialization methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add xml serialization begin byte serialization methods" />
+    <MESSAGE value="change item and ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="change item and ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java</url>
           <line>185</line>
@@ -230,8 +236,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java</url>
-          <line>40</line>
+          <line>39</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
