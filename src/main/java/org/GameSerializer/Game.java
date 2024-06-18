@@ -144,20 +144,25 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
     public static Set<VideoGame> deserializeSetFromCSV(String file) {
         Set<VideoGame> games = new TreeSet<>();
         try{
+            //read all lines
             String allLines= Files.readString(Paths.get(file), StandardCharsets.UTF_8);
         String[] lines = allLines.split("\n");
+        // if not item then do it. make title line in csv a constant.
         for(String obj : lines){
             String[] item= obj.split(",");
             if (item[0].equalsIgnoreCase("Title")){
                 continue;
             }
+            // Will be able to drop.
             else {
+                // do not use this or new in naming convention
                 VideoGame thisgame = new Game(item[0].trim(), item[1].trim(), Integer.parseInt(item[2]), item[3].trim());
                 games.add(thisgame);
             }
         }
     }
         catch (IOException e){
+            // specify what function error message is in.
             System.out.println(e.getMessage());
         }
         return games;
