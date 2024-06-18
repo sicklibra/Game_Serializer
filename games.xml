@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.1" class="java.beans.XMLDecoder">
+ <object class="java.util.TreeSet">
+  <void method="add">
+   <object class="org.GameSerializer.Game">
+    <void property="system">
+     <string>Sega</string>
+    </void>
+    <void property="title">
+     <string>Apex</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="org.GameSerializer.Game">
+    <void property="system">
+     <string>Play Station</string>
+    </void>
+    <void property="title">
+     <string>Banjo</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="org.GameSerializer.Game">
+    <void property="system">
+     <string>Nintendo</string>
+    </void>
+    <void property="title">
+     <string>Legend of Zelda</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
