@@ -12,4 +12,6 @@ public interface VideoGame {
     public void setPlayers (int players);
     public void setSystem (String system);
     public void setFormat (String format);
+
+
 }

@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
+import org.utilities.XML.XMLSerializerInterface;
 
 import static org.GameSerializer.Game.*;
 

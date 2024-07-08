@@ -1,5 +1,9 @@
 package org.GameSerializer;
 
+import com.thoughtworks.xstream.XStream;
+import org.utilities.XML.GameXMLConverter;
+import org.utilities.XML.XMLSerializerInterface;
+
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.*;
@@ -13,7 +17,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 
-public class Game implements VideoGame, Comparable<Game>, Serializable {
+public class Game implements VideoGame, Comparable<Game>, Serializable, XMLSerializerInterface {
     String title;
     String system;
     int numPlayers;
@@ -134,20 +138,27 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
     }
 
     public static void serializeSetToXML(Set<VideoGame> games, String file)throws IOException{
-            XMLEncoder enc;
-            enc = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(file)));
-            enc.writeObject(games);
-            enc.close();
+        for (VideoGame game : games){
+            game.serializeXMLObject();
+        }
+//            XMLEncoder enc;
+//            enc = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(file)));
+//            enc.writeObject(games);
+//            enc.close();
     }
+
 
     //This will be what i fix in the marshalling setup using the xstream system
     public static Set<VideoGame> deserializeFromXML(String file)throws IOException{
-        //Data lost in this function re-working with xstream
         Set<VideoGame> games = new TreeSet<>();
-        XMLDecoder dec =new XMLDecoder(new FileInputStream(file));
-        games = (Set<VideoGame>) dec.readObject();
-        dec.close();
-        return games;
+        VideoGame gameFromFile = null;
+        gameFromFile=readXMLObject(file,canConvert(readXMLObject()));
+//        //Data lost in this function re-working with xstream
+//        Set<VideoGame> games = new TreeSet<>();
+//        XMLDecoder dec =new XMLDecoder(new FileInputStream(file));
+//        games = (Set<VideoGame>) dec.readObject();
+//        dec.close();
+//        return games;
     }
     public static byte[] toBytes(Set<VideoGame> games) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -161,4 +172,6 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
         return games;
     }
+
+
 }

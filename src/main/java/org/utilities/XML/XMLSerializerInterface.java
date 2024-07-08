@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public interface XMLSerializerInterface {
     //Use Xstream to hopefully serialize obj to XML
     //@param filename
+
     default void serializeXMLObject(String filename){
         OutputStreamWriter outfile=null;
 
@@ -33,7 +34,7 @@ public interface XMLSerializerInterface {
                 out.println(xml);
                 out.flush();
             }
-            catch(IOException e) {
+            catch(Exception e) {
                 Logger.getLogger(XMLSerializerInterface.class.getName()).log(Level.SEVERE, "Could not write to specified file", e);
             }
             finally {

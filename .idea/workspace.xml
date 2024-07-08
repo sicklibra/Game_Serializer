@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="begin work on xStream xml serializing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/utilities/XML/GameXMLConverter.java" afterDir="false" />
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="xStream interface and XMLConverter update VideoGame for set val">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/utilities/XMLSerializerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +145,8 @@
       <workItem from="1719795143065" duration="342000" />
       <workItem from="1719966578336" duration="2741000" />
       <workItem from="1720401624012" duration="3021000" />
-      <workItem from="1720404684603" duration="110000" />
+      <workItem from="1720404684603" duration="130000" />
+      <workItem from="1720456140445" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
       <option name="closed" value="true" />
@@ -243,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719969339147</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="xStream interface and XMLConverter update VideoGame for set val">
+      <option name="closed" value="true" />
+      <created>1720404806339</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720404806339</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +271,7 @@
     <MESSAGE value="now serialize and deserialize using byte[]" />
     <MESSAGE value="comments" />
     <MESSAGE value="begin work on xStream xml serializing" />
-    <option name="LAST_COMMIT_MESSAGE" value="begin work on xStream xml serializing" />
+    <MESSAGE value="xStream interface and XMLConverter update VideoGame for set val" />
+    <option name="LAST_COMMIT_MESSAGE" value="xStream interface and XMLConverter update VideoGame for set val" />
   </component>
 </project>
