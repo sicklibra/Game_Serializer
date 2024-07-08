@@ -37,7 +37,7 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
     //Mutators
     public void setTitle(String title){this.title = title;}
     public void setSystem(String system){this.system = system;}
-    public void setNumPlayers(int numPlayers){this.numPlayers = numPlayers;}
+    public void setPlayers(int numPlayers){this.numPlayers = numPlayers;}
     public void setFormat(String format){this.format = format;}
 
     //String to write to csv
@@ -59,6 +59,7 @@ public class Game implements VideoGame, Comparable<Game>, Serializable {
     public String getSystem(){
         return system;
     }
+    public String getFormat(){return format;}
 
     //compareTo returns a neg/pos num or 0 (alphabetically compare titles)
     @Override

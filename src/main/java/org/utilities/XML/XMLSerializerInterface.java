@@ -1,4 +1,4 @@
-package org.utilities;
+package org.utilities.XML;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -46,6 +46,10 @@ public interface XMLSerializerInterface {
             e.printStackTrace();
         }
     }
+    /*@param filename
+    @param doValicate
+    @return
+     */
     default Object deserializeXMLObject(String filename,boolean doValidate){
         //Pull object from XML.
         Object myObject = null;
@@ -63,6 +67,14 @@ public interface XMLSerializerInterface {
         catch (Exception iOException){
             //assuming a placeholder?
         }
+        return myObject;
     }
-
+    /*
+    @param xstream
+     */
+    void customizeXstream(XStream xstream);
+    /*@param sml
+    @return
+     */
+    default String custimizeXML(String xml){return xml;}
 }
