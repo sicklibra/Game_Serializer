@@ -1,4 +1,4 @@
-package org.utilities.XML;
+package org.utilities;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;

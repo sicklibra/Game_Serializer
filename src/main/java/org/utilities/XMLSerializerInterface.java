@@ -1,4 +1,4 @@
-package org.utilities.XML;
+package org.utilities;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;

@@ -1,11 +1,8 @@
 package org.GameSerializer;
+import org.utilities.binSerializer;
 
-import com.thoughtworks.xstream.XStream;
-import org.utilities.XML.GameXMLConverter;
-import org.utilities.XML.XMLSerializerInterface;
+import org.utilities.XMLSerializerInterface;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -16,8 +13,10 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
+import static org.utilities.binSerializer.*;
 
-public class Game implements VideoGame, Comparable<Game>, Serializable, XMLSerializerInterface {
+
+public class Game implements VideoGame, Comparable<Game>, Serializable {
     String title;
     String system;
     int numPlayers;
@@ -138,6 +137,8 @@ public class Game implements VideoGame, Comparable<Game>, Serializable, XMLSeria
     }
 
     public static void serializeSetToXML(Set<VideoGame> games, String file)throws IOException{
+        //impliment practices from the interface into this section.
+        //use for loop to make set into array "walking" .size
         for (VideoGame game : games){
             game.serializeXMLObject();
         }
@@ -160,17 +161,27 @@ public class Game implements VideoGame, Comparable<Game>, Serializable, XMLSeria
 //        dec.close();
 //        return games;
     }
-    public static byte[] toBytes(Set<VideoGame> games) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos= new ObjectOutputStream(baos);
-        oos.writeObject(games);
-        return baos.toByteArray();
+
+    public static void setToFile(Set<VideoGame> games, String file){
+        try {
+            serializeObjectToFile(games, file);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
-    public static Set<VideoGame> convertFromByte(byte[] bytes)throws IOException{
-        //Fix me like before
-        Set<VideoGame> games = new TreeSet<>();
-        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
-        return games;
+    public static void deserializeFromBinFile(String file)throws Exception{
+        Set<VideoGame> games = null;
+        Set<Object> undefSet = null;
+        try {
+            undefSet = deserializeSetFromBytes(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        for (Object o : undefSet){
+            VideoGame game = (VideoGame) o;
+            games.add(game);
+        }
+
     }
 
 

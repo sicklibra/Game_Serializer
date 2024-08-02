@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
-import org.utilities.XML.XMLSerializerInterface;
 
 import static org.GameSerializer.Game.*;
 
@@ -14,15 +13,7 @@ import static org.GameSerializer.Game.*;
 
 public class Driver {
     //serializes to binary file using byte array
-    public static void serializeToBin(String file, byte[] bytes){
-        try{
-            Path fileOut= Paths.get(file);
-            Files.write(fileOut, bytes);
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+
 
     //Deserializes byte array from previous file
     public static byte[] deserializeObjSetFromBin(String file){
@@ -110,7 +101,7 @@ public class Driver {
             throw new RuntimeException(e);
         }
 
-        // used for debugging purpouses
+        // used for debugging purposes
         System.out.println("done");
     }
 }
