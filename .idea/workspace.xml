@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="attempt implement serialization xstream">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/utilities/binSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="600d12e8-af0b-48f5-ac6f-3ecf71da17ec" name="Changes" comment="xStream interface and XMLConverter update VideoGame for set val">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/utilities/XML/GameXMLConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/utilities/GameXMLConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/utilities/XMLSerializerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/GameSerializer/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/GameSerializer/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/GameSerializer/VideoGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/utilities/XML/XMLSerializerInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +24,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -47,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -80,7 +74,6 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Gradle.DriverTest.serializeToBin.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Game_Serializer [:Driver.main()].executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -88,7 +81,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Veteran/Documents/Programing/Java/Game_Serializer&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Veteran/Documents/Programing/Java/Tripoli&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -106,9 +99,6 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Veteran\Documents\Programing\Java\Game_Serializer" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -118,37 +108,6 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.GameSerializer" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="DriverTest.serializeToBin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.GameSerializer.DriverTest.serializeToBin&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.DriverTest.serializeToBin" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -187,12 +146,7 @@
       <workItem from="1719966578336" duration="2741000" />
       <workItem from="1720401624012" duration="3021000" />
       <workItem from="1720404684603" duration="130000" />
-      <workItem from="1720456140445" duration="3261000" />
-      <workItem from="1720459538135" duration="21000" />
-      <workItem from="1720540202873" duration="4723000" />
-      <workItem from="1721088382667" duration="307000" />
-      <workItem from="1721327719182" duration="2016000" />
-      <workItem from="1722560140804" duration="2128000" />
+      <workItem from="1720456140445" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="second commit all files funcitoning as expected.">
       <option name="closed" value="true" />
@@ -298,15 +252,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720404806339</updated>
     </task>
-    <task id="LOCAL-00014" summary="attempt implement serialization xstream">
-      <option name="closed" value="true" />
-      <created>1720459472296</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1720459472298</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +272,6 @@
     <MESSAGE value="comments" />
     <MESSAGE value="begin work on xStream xml serializing" />
     <MESSAGE value="xStream interface and XMLConverter update VideoGame for set val" />
-    <MESSAGE value="attempt implement serialization xstream" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt implement serialization xstream" />
+    <option name="LAST_COMMIT_MESSAGE" value="xStream interface and XMLConverter update VideoGame for set val" />
   </component>
 </project>

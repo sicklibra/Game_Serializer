@@ -14,9 +14,8 @@ class GameTest {
     void setUp() {
         game1 = new Game("zelda", "nintendo",2,"cart");
         game2 = new Game("apex   ", "all",60,"digital");
-        String csvFile= "gamelog.csv";
-        String xmlFile= "gamelog.xml";
-        String datFile= "gamelog.dat";
+        //String strTest1 = game1.csvStr();
+        //String strTest2 = game2.csvStr();
     }
 
     @AfterEach
@@ -38,14 +37,5 @@ class GameTest {
 
     @Test
     void deserializeSetFromCSV() {
-    }
-
-    @Test
-    void setToFile(){
-
-    }
-    @Test
-    void deserializeFromBinFile(){
-
     }
 }
