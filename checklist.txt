@@ -1,0 +1,8 @@
+Create seprate class to serialize to binary using nio
+Move all driver functions to tests and empty driver
+    1) utilize assertions for tests to verify functionality
+    2) test all public methods in game
+        -Creating core of program driver will become basically the start before
+            Breaking off to the rest of the program.
+        -Use gradle for testing attempt to gain full coverage(utilizing all methods
+            in the class
